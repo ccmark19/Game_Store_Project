@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GamesModelStoreContainer" CdmEntityContainer="GamesEntities">
+    <EntitySetMapping Name="tblGames">
+      <EntityTypeMapping TypeName="GamesModel.tblGame">
+        <MappingFragment StoreEntitySet="tblGames">
+          <ScalarProperty Name="gameId" ColumnName="gameId" />
+          <ScalarProperty Name="gameName" ColumnName="gameName" />
+          <ScalarProperty Name="gameDesc" ColumnName="gameDesc" />
+          <ScalarProperty Name="gameGenre" ColumnName="gameGenre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblWishlists">
+      <EntityTypeMapping TypeName="GamesModel.tblWishlist">
+        <MappingFragment StoreEntitySet="tblWishlists">
+          <ScalarProperty Name="wishlistId" ColumnName="wishlistId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="gameId" ColumnName="gameId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userInfoes">
+      <EntityTypeMapping TypeName="GamesModel.userInfo">
+        <MappingFragment StoreEntitySet="userInfo">
+          <ScalarProperty Name="infoID" ColumnName="infoID" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="favPlatform" ColumnName="favPlatform" />
+          <ScalarProperty Name="favCategory" ColumnName="favCategory" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="postCode" ColumnName="postCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="wantEmail" ColumnName="wantEmail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

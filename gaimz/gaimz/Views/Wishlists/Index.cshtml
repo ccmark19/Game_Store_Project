@@ -1,0 +1,38 @@
+﻿@model IEnumerable<gaimz.Models.tblWishlist>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+
+
+<p>
+    @Html.ActionLink("View All Users Wishlists", "viewAllWishList")
+
+</p>
+<p>Displaying wishlist for user: @ViewBag.userId</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.gameId)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.gameId)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", "tblGames", new { id = item.gameId }, null) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.wishlistId })
+            </td>
+        </tr>
+    }
+
+</table>

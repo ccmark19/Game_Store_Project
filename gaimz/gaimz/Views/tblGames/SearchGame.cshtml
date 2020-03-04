@@ -1,0 +1,43 @@
+﻿@model IEnumerable <gaimz.Models.tblGame>
+
+<br /><br />
+
+@using (Html.BeginForm("SearchGame", "tblGames", FormMethod.Get)) 
+{
+    @Html.TextBox("searching")<input type="submit" value="Search">
+}
+
+<h2>SearchGame</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>Game ID</tr>
+        <tr>Game Name</tr>
+        <tr>Game Description</tr>
+        <tr>Game Genre</tr>
+    </thead>
+    <tbody>
+        @if (Model.Count() == 0)
+        {
+            <tr>
+                <td colspan="4" style="color:red">
+                    No Match Any document
+                </td>
+            </tr>
+        }
+        else
+        {
+            foreach(var item in Model)
+            {
+            <tr>
+                <td>@Html.ActionLink(item.gameId.ToString(),"Details", new { id = item.gameId })</td>
+                <td>@Html.ActionLink(item.gameName.ToString(), "Details", new { id = item.gameId })</td>
+                <td>@item.gameDesc</td>
+                <td>@item.gameGenre</td>
+            </tr>
+            }
+        }
+    </tbody>
+        
+</table>
+

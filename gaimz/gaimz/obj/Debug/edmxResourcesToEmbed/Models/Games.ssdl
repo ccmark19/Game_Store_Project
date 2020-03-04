@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GamesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblGames">
+    <Key>
+      <PropertyRef Name="gameId" />
+    </Key>
+    <Property Name="gameId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="gameName" Type="varchar" MaxLength="50" />
+    <Property Name="gameDesc" Type="varchar" MaxLength="255" />
+    <Property Name="gameGenre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblWishlists">
+    <Key>
+      <PropertyRef Name="wishlistId" />
+    </Key>
+    <Property Name="wishlistId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userId" Type="int" />
+    <Property Name="gameId" Type="int" />
+  </EntityType>
+  <EntityType Name="userInfo">
+    <Key>
+      <PropertyRef Name="infoID" />
+    </Key>
+    <Property Name="infoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userId" Type="varchar" MaxLength="50" />
+    <Property Name="favPlatform" Type="varchar" MaxLength="50" />
+    <Property Name="favCategory" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+    <Property Name="postCode" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="Country" Type="varchar" MaxLength="50" />
+    <Property Name="wantEmail" Type="int" />
+  </EntityType>
+  <EntityContainer Name="GamesModelStoreContainer">
+    <EntitySet Name="tblGames" EntityType="Self.tblGames" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblWishlists" EntityType="Self.tblWishlists" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="userInfo" EntityType="Self.userInfo" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

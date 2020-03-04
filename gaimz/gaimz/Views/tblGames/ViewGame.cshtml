@@ -1,0 +1,45 @@
+﻿@model IEnumerable<gaimz.Models.tblGame>
+
+@{
+    ViewBag.Title = "viewGame";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.gameName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gameDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gameGenre)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.gameName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gameDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gameGenre)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.gameId }) |
+                @Html.ActionLink("Add to wishlists", "create", "wishlists", new { id = item.gameId }, null) |
+
+            </td>
+        </tr>
+    }
+
+</table>
+

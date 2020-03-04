@@ -1,0 +1,46 @@
+﻿@model gaimz.Models.tblGame
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tblGame</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.gameName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gameName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gameDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gameDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gameGenre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gameGenre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Add to wishlists", "create", "wishlists", new { id = Model.gameId }, null) |
+    @Html.ActionLink("Add A Review", "Create", "tblReviews", new { id = Model.gameId }, null) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

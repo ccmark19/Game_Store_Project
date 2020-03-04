@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GamesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblGame">
+    <Key>
+      <PropertyRef Name="gameId" />
+    </Key>
+    <Property Name="gameId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="gameName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="gameDesc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="gameGenre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblWishlist">
+    <Key>
+      <PropertyRef Name="wishlistId" />
+    </Key>
+    <Property Name="wishlistId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userId" Type="Int32" />
+    <Property Name="gameId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="userInfo">
+    <Key>
+      <PropertyRef Name="infoID" />
+    </Key>
+    <Property Name="infoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="favPlatform" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="favCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="postCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="wantEmail" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="GamesEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblGames" EntityType="Self.tblGame" />
+    <EntitySet Name="tblWishlists" EntityType="Self.tblWishlist" />
+    <EntitySet Name="userInfoes" EntityType="Self.userInfo" />
+  </EntityContainer>
+</Schema>
